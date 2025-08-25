@@ -1,0 +1,35 @@
+/* Write your code here: */
+
+/*Groups*/
+h1, h2{
+    color: blueviolet;
+}
+
+/*Child: parent selector > child selector {} (one level only)*/
+div > p{
+    color: firebrick;
+}
+
+/*Descendant: selector selector {} (the second is the descendant, at any level)*/
+.box li{
+    color: blue;
+}
+
+/*Chaining: selector selector {} (apply where all selector are true)*/
+li.done{
+    color: seagreen;
+}
+
+/*Combining Combiners: combine many combiners*/
+ul p.done{
+    font-size: 0.5rem
+}
+/*
+Same as
+ul > p.done{
+    font-size: 0.5rem
+}
+body > ul p.done{
+    font-size: 0.5rem
+}
+    */
