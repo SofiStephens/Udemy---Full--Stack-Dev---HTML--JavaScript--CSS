@@ -16,6 +16,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        height:100vh;  /*100% of vertical height to move to the center (vertically) of the page*/
 
       }
       .pricing-plan{
@@ -23,8 +24,8 @@
         margin: 1rem;
         text-align: center;
         flex-basis: 400px;
+        height: 200px;
         flex: 0;
-        height:200px;
         padding: 10px;
         position: relative;
       }
@@ -46,9 +47,8 @@
         color: white;
         padding: 5px;
         border: 0px;
-        position: absolute;
+        position: relative;
         bottom: 10px;
-        right: 90px;
         border-radius: 10%;
       }
       /* Hint: What can you do with a media query and flexbox? */
@@ -58,7 +58,7 @@
           flex-direction: column;
         }
       .pricing-plan{
-        height: 400px;
+        width: 300px;
       }
       }
     </style>
