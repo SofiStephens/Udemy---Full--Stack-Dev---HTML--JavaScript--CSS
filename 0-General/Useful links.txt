@@ -5,3 +5,4 @@ https://appbrewery.github.io/grid-vs-flexbox/
 https://appbrewery.github.io/grid-sizing/
 https://appbrewery.github.io/bootstrap-layout/
 https://www.w3schools.com/bootstrap/bootstrap_templates.asp Boootstrap templates
+https://colorhunt.co/ Color Palets
