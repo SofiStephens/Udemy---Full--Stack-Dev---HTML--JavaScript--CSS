@@ -7,3 +7,4 @@ https://appbrewery.github.io/bootstrap-layout/
 https://www.w3schools.com/bootstrap/bootstrap_templates.asp Boootstrap templates
 https://colorhunt.co/ Color Palets
 https://developer.mozilla.org/en-US/ JavaScript, CSS and HTML doc
+https://www.w3schools.com/jsref/dom_obj_style.asp HTML DOM Style using JavaScript
