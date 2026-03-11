@@ -35,6 +35,9 @@ function playSound(ChosenColour){
 
 //Create function that builds sequence
 function nextSequence(){
+    //Reset the user selection (if any)
+    userClickedPattern=[]
+    
     //Increase the level
     level++;
 
@@ -63,14 +66,13 @@ function nextSequence(){
 //Create function to animate when a button is pressed
 function animatePress(currentColour){
     //Add the class pressed to the button
-    $("#"+currentColour).toggleClass("pressed")
+    $("#"+currentColour).addClass("pressed")
 
     //Wait 100 ms and remove the pressed class
     setTimeout(function () {
         $("#" + currentColour).removeClass("pressed");
     }, 100);
 }
-
 
 
 //Wait that the whole content of the DOM is loaded before jQuery runs
@@ -85,6 +87,48 @@ $(document).ready(function(){
 
         //Animate when pressed
         animatePress(userChosenColour);
-        return console.log(userClickedPattern)
+        
+        //Check each of the selected buttons match the sequence
+        checkAnswer(userClickedPattern.length-1)
     });
 });
+
+
+//Create function to start over
+function startOver(){
+    level=[]
+    gamePattern=[]
+    started=false
+}
+//Create function to check answers
+function checkAnswer(currentLevel){
+    if(userClickedPattern[currentLevel]===gamePattern[currentLevel]){
+        console.log("success");
+
+        //Check if the user input finished clicking the buttons
+        if(userClickedPattern.length===gamePattern.length){
+        //Call nextSequence() after a 1000 millisecond delay
+        setTimeout(function () {
+          nextSequence();
+        }, 1000);
+      }
+
+    } else {
+        //Play the "wrong" sound
+        playSound("wrong");
+
+        //Change the body to show error
+        $("body").addClass("game-over");
+        setTimeout(
+            function(){
+                $("body").removeClass("game-over");
+            }, 200);
+
+        //Change the title to show error
+        $("h1").text("Game Over. Press Any Key to Restart");
+
+        //Start over
+        startOver()
+    }
+}
+
